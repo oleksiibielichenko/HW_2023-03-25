@@ -2,15 +2,12 @@ from func_tools.divide import divide
 from func_tools.sum import sum
 from func_tools.subtruct import subtruct
 from func_tools.multiply import multiply
+from func_tools.exp import exp
 
-
-# 1) Calculator -> + , * , / , -
-# 2) square
-# 3) Error handling : try , except , finally
 
 while True:
 
-    operand = input("Enter operand (+, -, *, /, ^2): ")
+    operand = input("Enter operand (+, -, *, /, ^): ")
 
     try:
         num1 = float(input("Enter first number: "))
@@ -23,6 +20,8 @@ while True:
             result = multiply(num1, num2)
         elif operand == '/':
             result = divide(num1, num2)
+        elif operand == '^':
+            result = exp(num1, num2)
         else:
             print("!!!Wrong operand!!!")
             continue
